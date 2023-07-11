@@ -23,9 +23,5 @@ jobs:
       - name: compression  
         run: |  
           zip -P ${{ github.event.issue.id }} -r download.zip downloads/   
-      - name: upload  
-      
-      - name: comment  
-        run: |
-        
+
         
