@@ -3,7 +3,8 @@
 # echo ./$1 # for test  
 
 echo "Please download file in 14 days\n"  
-./transfer trs $1 | tail -n 1 
+#./transfer trs $1 | tail -n 1 
+./transfer fic $1
 
 # failed
 # ./transfer muse $1  
