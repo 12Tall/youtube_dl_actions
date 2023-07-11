@@ -5,6 +5,15 @@ on:
       - labeled 
 
 jobs:  
+  test:  
+    if: ${{ github.event.label.name == 'Test' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: |  
+          filename = "${{ github.event.issue.title// /_ }}.zip"
+          echo $filename
+    
   all_works:  
     if: ${{ github.event.label.name == 'Download' }}
     runs-on: ubuntu-latest
@@ -36,11 +45,13 @@ jobs:
       - name: compression  
         id: step5
         run: |  
-          zip -P ${{ github.event.issue.id }} -r "${{ github.event.issue.title }}.zip" downloads/   
+          filename = "${{ github.event.issue.title// /_ }}.zip"
+          zip -P ${{ github.event.issue.id }} -r $filename downloads/   
       - name: upload  
         id: step6
         run: |  
-          chmod u+x ./upload.sh "${{ github.event.issue.title }}.zip"            
+          filename = "${{ github.event.issue.title// /_ }}.zip"
+          chmod u+x ./upload.sh $filename            
           # echo "result=$result" >> $GITHUB_OUTPUT
           # echo "::set-output name=result::$(./upload.sh | head -n 2)"
           
