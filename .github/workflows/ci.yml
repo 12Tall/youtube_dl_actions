@@ -1,0 +1,15 @@
+name: ci  
+on: 
+  issues:  
+    types: [opened]  
+
+jobs:  
+  all_works:  
+    runs-on: ubuntu-latest
+    steps:
+      - name: get issue info  
+        run: |  
+        echo "Issue Id: ${{ github.event.issue.id }}"
+        echo "Issue title: ${{ github.event.issue.title }}"
+        echo "Issue body: ${{ github.event.issue.body }}"
+        
