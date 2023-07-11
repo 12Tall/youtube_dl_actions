@@ -60,6 +60,7 @@ jobs:
           filename="${{ github.event.issue.title }} .zip"
           filename="${filename//[\/:\*\?\"<>|\\ ]/_}"
           chmod u+x ./upload.sh           
+          echo "$(./transfer trs $filename)"
           # echo "result=$result" >> $GITHUB_OUTPUT
           # echo "::set-output name=result::$(./upload.sh | head -n 2)"
           
