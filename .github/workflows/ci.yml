@@ -35,6 +35,7 @@ jobs:
       - name: upload  
         run: |  
           chmod u+x ./upload.sh  
-          ./upload.sh
+          ./upload.sh 2>&1 | head -n 1 > ./result.txt  
+          cat ./result.txt  
 
         
