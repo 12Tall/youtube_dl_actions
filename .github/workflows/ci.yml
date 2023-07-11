@@ -12,7 +12,7 @@ jobs:
       - name: test
         run: |  
           filename = "${{ github.event.issue.title }}.zip"
-          echo "${filename// /_}"
+          echo ${filename// /_}
     
   all_works:  
     if: ${{ github.event.label.name == 'Download' }}
