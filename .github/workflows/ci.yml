@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get issue info  
+        id: step1
         run: |  
           echo "Issue Id: ${{ github.event.issue.id }}"
           echo "Issue Number: ${{ github.event.issue.number }}"
@@ -17,25 +18,40 @@ jobs:
           echo "Issue body: ${{ github.event.issue.body }}"
           
       - name: Clone repository
+        id: step2
         uses: actions/checkout@v3
         
       - name: install youtube-dl
+        id: step3
         run: |
           curl -sL https://git.io/file-transfer | sh 
           sudo pip install git+https://github.com/ytdl-org/youtube-dl.git
                  
       - name: download  
+        id: step4
         run: |  
           echo "${{ github.event.issue.body }}" > playlist.txt
           mkdir downloads
           youtube-dl --config-location config.txt
       - name: compression  
+        id: step5
         run: |  
           zip -P ${{ github.event.issue.id }} -r downloads.zip downloads/   
       - name: upload  
+        id: step6
         run: |  
           chmod u+x ./upload.sh  
           ./upload.sh > ./result.txt  
           cat ./result.txt  
+      - name: add comment  
+        id: step7
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            ${{ steps.step6.outputs }}            
+          reactions: '+1'
+        
+      
 
         
