@@ -6,7 +6,7 @@ on:
 
 jobs:  
   all_works:  
-    if: github.event.issue.label.name == "Download" 
+    if: github.event.issue.label.name == 'Download'
     runs-on: ubuntu-latest
     steps:
       - name: get issue info  
