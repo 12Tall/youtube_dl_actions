@@ -5,7 +5,8 @@
 echo "Please download file in 14 days\n"  
 #./transfer trs $1 | tail -n 1 
 #./transfer fic $1
-./transfer gg $1
+#./transfer gg $1
+./transfer wss $1
 
 # failed
 # ./transfer muse $1  
