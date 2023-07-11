@@ -1,4 +1,4 @@
-# 12tall_dl
+# youtube_dl_actions
 Download Youtube by issues. Inspired by [justjavac/github-actions-youtube-dl](https://github.com/justjavac/github-actions-youtube-dl), and its [issue#4](https://github.com/justjavac/github-actions-youtube-dl/issues/4#issue-815334040).  
 
 ## Usage  
