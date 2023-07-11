@@ -3,13 +3,13 @@
 # echo ./$1 # for test  
 
 echo "Please download file in 14 days\n"  
-#./transfer trs $1 | tail -n 1 
+./transfer trs $1 | tail -n 1 
 #./transfer fic $1
 #./transfer gg $1
 #./transfer wss $1
-./transfer wet $1
 
-# failed
+# need to login 
+# ./transfer wet $1
 # ./transfer muse $1  
 
 # need VPN connection #
