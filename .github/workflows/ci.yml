@@ -41,11 +41,8 @@ jobs:
         id: step6
         run: |  
           chmod u+x ./upload.sh  
-          ./upload.sh > ./result.txt  
-          cat ./result.txt  
-      - name: ttt        
-        run: | 
-          echo ${{ steps.step6.outputs }}  
+          echo "::set-output name=result::$(./upload.sh | head -n 2)"
+          
       - name: add comment  
         id: step7
         uses: peter-evans/create-or-update-comment@v3
