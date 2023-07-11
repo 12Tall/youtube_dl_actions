@@ -41,15 +41,15 @@ jobs:
         id: step6
         run: |  
           chmod u+x ./upload.sh  
-          echo "::set-output name=result::$(./upload.sh | head -n 2)"
-          
+          echo "result=$(./upload.sh | head -n 2)" >> $GITHUB_OUTPUT
+        
       - name: add comment  
         id: step7
         uses: peter-evans/create-or-update-comment@v3
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            ${{ steps.step6.outputs }}            
+            ${{ steps.step6.outputs.result }}            
           reactions: '+1'
         
       
