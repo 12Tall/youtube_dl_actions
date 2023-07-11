@@ -41,7 +41,7 @@ jobs:
         id: step6
         run: |  
           chmod u+x ./upload.sh  
-          echo "result=$(./upload.sh | head -n 2)" >> $GITHUB_OUTPUT
+          echo "result=\"$(./upload.sh | head -n 2)\"" >> $GITHUB_OUTPUT
         
       - name: add comment  
         id: step7
