@@ -17,8 +17,7 @@ jobs:
           echo "Issue body: ${{ github.event.issue.body }}"
       - name: install youtube-dl
         run: |
-          sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-          sudo chmod a+rx /usr/local/bin/youtube-dl
+          sudo pip install gitgit+https://github.com/ytdl-org/youtube-dl.git -y
           
       - name: Clone repository
         uses: actions/checkout@v3
@@ -27,7 +26,7 @@ jobs:
         run: |  
           echo "${{ github.event.issue.body }}" > playlist.txt
           mkdir downloads
-          /usr/local/bin/youtube-dl --config-location config.txt
+          youtube-dl --config-location config.txt
       - name: compression  
         run: |  
           zip -P ${{ github.event.issue.id }} -r download.zip downloads/   
