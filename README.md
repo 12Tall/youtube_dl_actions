@@ -2,14 +2,15 @@
 Download Youtube by issues. Inspired by [justjavac/github-actions-youtube-dl](https://github.com/justjavac/github-actions-youtube-dl), and its [issue#4](https://github.com/justjavac/github-actions-youtube-dl/issues/4#issue-815334040).  
 
 ## Usage  
-Check [example](https://github.com/12Tall/12tall_dl/issues/3#issue-1798455730), user can create an issue that includes the youtube links:  
+1. Check [example](https://github.com/12Tall/12tall_dl/issues/3#issue-1798455730), user can create an issue that includes the youtube links:  
 ```txt
 https://www.youtube.com/watch?v=7sGLAhI7MlY&list=PL-xEb6nkpVRrM547GlPzR_-ERt9-4vmmm
 
 https://www.youtube.com/watch?v=PoncfZWKO0k
 =D2KnKQJwwWE
 ```
-After the downloaging compeleted, you will get a link with its extraction password in the issue comment.  
+2. Then labeled it as `Download`, the github actions will start downloading  
+3. After the downloaging compeleted, you will get a link with its extraction password in the issue comment.  
 
 > You can name the issue with any charactors, this action use `issue.id` and `issue.content` only.
 
