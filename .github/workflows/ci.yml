@@ -34,7 +34,7 @@ jobs:
           zip -P ${{ github.event.issue.id }} -r downloads.zip downloads/   
       - name: upload  
         run: |  
-          chmod u+x ./transfer.sh  
-          ./transfer.sh
+          chmod u+x ./upload.sh  
+          ./upload.sh
 
         
