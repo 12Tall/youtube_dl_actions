@@ -40,7 +40,7 @@ jobs:
       - name: upload  
         id: step6
         run: |  
-          chmod u+x ./upload.sh "./${{ github.event.issue.title }}.zip"            
+          chmod u+x ./upload.sh "${{ github.event.issue.title }}.zip"            
           # echo "result=$result" >> $GITHUB_OUTPUT
           # echo "::set-output name=result::$(./upload.sh | head -n 2)"
           
