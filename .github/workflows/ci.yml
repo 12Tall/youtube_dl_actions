@@ -12,11 +12,20 @@ jobs:
       - name: get issue info  
         run: |  
           echo "Issue Id: ${{ github.event.issue.id }}"
+          echo "Issue Id: ${{ github.event.issue.number }}"
           echo "Issue title: ${{ github.event.issue.title }}"
           echo "Issue body: ${{ github.event.issue.body }}"
       - name: download  
         run: |  
           echo "${{ github.event.issue.body }}" > playlist.txt
-          # ./bin/youtube-dl --config-location config.txt
           mkdir downloads
-          cat playlist.txt
+          ./bin/youtube-dl --config-location config.txt
+      - name: compression  
+        run: |  
+          zip -P ${{ github.event.issue.id }} -r download.zip downloads/   
+      - name: upload  
+      
+      - name: comment  
+        run: |
+        
+        
