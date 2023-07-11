@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=PoncfZWKO0k
 2. Then labeled it as `Download`, the github actions will start to downloading  
 3. After the downloaging compeleted, you will get a link with its extraction password in the issue comment.  
 
-> You can name the issue with any charactors, this action use `issue.id` and `issue.content` only.
+> You can name the issue with any charactors, this action use `issue.id` and `issue.body` only.
 
 
 
