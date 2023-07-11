@@ -12,9 +12,13 @@ jobs:
       - name: get issue info  
         run: |  
           echo "Issue Id: ${{ github.event.issue.id }}"
-          echo "Issue Id: ${{ github.event.issue.number }}"
+          echo "Issue Number: ${{ github.event.issue.number }}"
           echo "Issue title: ${{ github.event.issue.title }}"
           echo "Issue body: ${{ github.event.issue.body }}"
+      - name: install youtube-dl
+        run: |
+          sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+          sudo chmod a+rx /usr/local/bin/youtube-dl
       - name: download  
         run: |  
           echo "${{ github.event.issue.body }}" > playlist.txt
