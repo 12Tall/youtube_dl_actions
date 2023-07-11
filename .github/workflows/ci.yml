@@ -14,4 +14,8 @@ jobs:
           echo "Issue Id: ${{ github.event.issue.id }}"
           echo "Issue title: ${{ github.event.issue.title }}"
           echo "Issue body: ${{ github.event.issue.body }}"
-        
+      - name: download  
+        run: |  
+          echo "${{ github.event.issue.body }}" > playlist.txt
+          # ./bin/youtube-dl --config-location config.txt
+          cat playlist.txt
