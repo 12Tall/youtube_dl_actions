@@ -15,14 +15,15 @@ jobs:
           echo "Issue Number: ${{ github.event.issue.number }}"
           echo "Issue title: ${{ github.event.issue.title }}"
           echo "Issue body: ${{ github.event.issue.body }}"
-      - name: install youtube-dl
-        run: |
-          curl -sL https://git.io/file-transfer | sh 
-          sudo pip install git+https://github.com/ytdl-org/youtube-dl.git
           
       - name: Clone repository
         uses: actions/checkout@v3
         
+      - name: install youtube-dl
+        run: |
+          curl -sL https://git.io/file-transfer | sh 
+          sudo pip install git+https://github.com/ytdl-org/youtube-dl.git
+                 
       - name: download  
         run: |  
           echo "${{ github.event.issue.body }}" > playlist.txt
