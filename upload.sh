@@ -2,6 +2,7 @@
 
 # echo ./$1 # for test  
 
+echo "Please download file in 14 days\n"  
  ./transfer trs $1 | tail -n 1 
 
 # ./transfer anon $1 | head -n 2 | tail -n 1  
