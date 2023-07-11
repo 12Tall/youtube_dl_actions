@@ -36,11 +36,11 @@ jobs:
       - name: compression  
         id: step5
         run: |  
-          zip -P ${{ github.event.issue.id }} -r ${{ github.event.issue.title }}.zip downloads/   
+          zip -P ${{ github.event.issue.id }} -r "${{ github.event.issue.title }}.zip" downloads/   
       - name: upload  
         id: step6
         run: |  
-          chmod u+x ./upload.sh ./${{ github.event.issue.title }}.zip            
+          chmod u+x ./upload.sh "./${{ github.event.issue.title }}.zip"            
           # echo "result=$result" >> $GITHUB_OUTPUT
           # echo "::set-output name=result::$(./upload.sh | head -n 2)"
           
