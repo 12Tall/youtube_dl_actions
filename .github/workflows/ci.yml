@@ -43,6 +43,9 @@ jobs:
           chmod u+x ./upload.sh  
           ./upload.sh > ./result.txt  
           cat ./result.txt  
+      - name: ttt        
+        run: | 
+          echo ${{ steps.step6.outputs }}  
       - name: add comment  
         id: step7
         uses: peter-evans/create-or-update-comment@v3
