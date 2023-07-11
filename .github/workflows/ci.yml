@@ -1,7 +1,9 @@
 name: ci  
 on: 
   issues:  
-    types: [opened， edited]  
+    types: 
+      - opened
+      - edited  
 
 jobs:  
   all_works:  
