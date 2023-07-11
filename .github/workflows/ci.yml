@@ -18,4 +18,5 @@ jobs:
         run: |  
           echo "${{ github.event.issue.body }}" > playlist.txt
           # ./bin/youtube-dl --config-location config.txt
+          mkdir downloads
           cat playlist.txt
