@@ -31,7 +31,7 @@ jobs:
           youtube-dl --config-location config.txt
       - name: compression  
         run: |  
-          zip -P ${{ github.event.issue.id }} -r download.zip downloads/   
+          zip -P ${{ github.event.issue.id }} -r downloads.zip downloads/   
       - name: upload  
         run: |  
           chmod u+x ./transfer.sh  
