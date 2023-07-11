@@ -1,2 +1,2 @@
 #!/bin/bash
-./transfer wet ./downloads.zip
+./transfer anon ./downloads.zip
