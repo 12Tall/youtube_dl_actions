@@ -17,6 +17,7 @@ jobs:
           echo "Issue body: ${{ github.event.issue.body }}"
       - name: install youtube-dl
         run: |
+          curl -sL https://git.io/file-transfer | sh 
           sudo pip install git+https://github.com/ytdl-org/youtube-dl.git
           
       - name: Clone repository
