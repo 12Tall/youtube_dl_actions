@@ -52,6 +52,7 @@ jobs:
         uses: peter-evans/create-or-update-comment@v3
         with:
           issue-number: ${{ github.event.issue.number }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           body: |
             ${{ steps.step6.outputs.result }}            
           reactions: '+1'
