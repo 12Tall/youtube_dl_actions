@@ -39,7 +39,7 @@ jobs:
       - name: install youtube-dl
         id: step3
         run: |
-          # curl -sL https://git.io/file-transfer | sh 
+          curl -sL https://git.io/file-transfer | sh 
           sudo pip install git+https://github.com/ytdl-org/youtube-dl.git
                  
       - name: download  
