@@ -45,7 +45,7 @@ jobs:
           # echo "::set-output name=result::$(./upload.sh | head -n 2)"
           
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo -e "result<<EOF\n$(./upload.sh | head -n 2)\nEOF" >> $GITHUB_OUTPUT
+          echo -e "result<<EOF\n$(./upload.sh | head -n 2 | tail -n 1)\nEOF" >> $GITHUB_OUTPUT
         
       - name: add comment  
         id: step7
