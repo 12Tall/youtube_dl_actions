@@ -9,11 +9,16 @@ jobs:
     if: ${{ github.event.label.name == 'Test' }}
     runs-on: ubuntu-latest
     steps:
+    
+      - name: Clone repository
+        id: step2
+        uses: actions/checkout@v3
+        
       - name: test
         run: |  
           filename="${{ github.event.issue.title }} .zip"
           filename="${filename//[\/:\*\?\"<>|\\ ]/_}"
-          echo $filename
+          ./upload.sh $filename
     
   all_works:  
     if: ${{ github.event.label.name == 'Download' }}
