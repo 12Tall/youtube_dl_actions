@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: test
         run: |  
-          filename="{${{ github.event.issue.title }}.zip// /_}"
+          filename="${${{ github.event.issue.title }}.zip// /_}"
           echo "$filename"
     
   all_works:  
