@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=PoncfZWKO0k
 
 
 ## Build your own app 
-- User can clone and set your own [PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) as `${{secret.ACCESS_TOKEN}}`  
+- User can fork and set your own [PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) as `${{secret.ACCESS_TOKEN}}` to manage issues    
 - change `config.txt` to config the [youtube-dl](https://github.com/ytdl-org/youtube-dl)
 - change `upload.sh` to select more cloud storage solutions, which is provided by [Mikubill/transfer](https://github.com/Mikubill/transfer)
 
